@@ -1,0 +1,71 @@
+{% load static %}
+<html>
+
+<head>
+    <style>
+        #container {
+            width: 500px;
+            height: 375px;
+            top: 0;
+            left: 0;
+        }
+
+        #videoElement {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 375px;
+            background-color: #666;
+        }
+
+        #canvas {
+            margin: 0px auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 375px;
+            z-index: 10;
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- <img id="img1" src="{% static '/run.png' %}" alt="My image"> -->
+
+    <div id="container">
+        <video autoplay="true" id="videoElement">
+
+        </video>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <script>
+        var video = document.querySelector("#videoElement");
+
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({
+                    video: true
+                })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (error) {
+                    console.log("Something went wrong!");
+                });
+        }
+    </script>
+
+    <!-- Load TensorFlow.js -->
+    <script src="{% static '/tf.js' %}"></script>
+    <!-- Load Posenet -->
+    <script src="{% static '/posenet.js' %}">
+    </script>
+    <script src="{% static '/index.js' %}"> </script>
+</body>
+
+</html>
