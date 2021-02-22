@@ -1,0 +1,22 @@
++++++++++++++++++++++++++++++++++++++++++++++
+Training Dataset Count: 1032
+Test Dataset Count: 244
+Accuracy:  0.9631147540983607
+              precision    recall  f1-score   support
+
+           0       1.00      0.89      0.94        84
+           1       0.95      1.00      0.97       160
+
+    accuracy                           0.96       244
+   macro avg       0.97      0.95      0.96       244
+weighted avg       0.97      0.96      0.96       244
+
+Confusion Matrix:  [[ 75   9]
+ [  0 160]]
+Random (Chance) Prediction AUROC :  0.5
+Support Vector Machines AUROC :  0.9464285714285715
++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Training Time (Sec) :  16.576296091079712
+Testing Time (Sec) :  0.15790605545043945
